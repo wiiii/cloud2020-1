@@ -55,7 +55,7 @@ public class PaymentController {
 
     /**
      * 服务熔断
-     * http://localhost:8001/payment/circuit/1
+     * http://192.168.137.131:8001/payment/circuit/1
      *
      * @param id
      * @return

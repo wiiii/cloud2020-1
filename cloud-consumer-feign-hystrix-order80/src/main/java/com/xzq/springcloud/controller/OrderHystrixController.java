@@ -25,7 +25,7 @@ public class OrderHystrixController {
 
     /**
      * 正常访问
-     * http://localhost/consumer/payment/hystrix/ok/1
+     * http://192.168.137.131/consumer/payment/hystrix/ok/1
      *
      * @param id
      * @return

@@ -4,6 +4,7 @@ import com.xzq.springcloud.entities.CommonResult;
 import com.xzq.springcloud.entities.Payment;
 import com.xzq.springcloud.lb.LoadBalancer;
 import lombok.extern.slf4j.Slf4j;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
@@ -26,7 +27,7 @@ import java.util.List;
 @Slf4j
 public class OrderController {
 
-    private final static String PAYMENT_URL = "http://localhost:8001";//不集群
+    private final static String PAYMENT_URL = "http://192.168.137.131:8001";//不集群
 //    private final static String PAYMENT_URL = "http://CLOUD-PAYMENT-SERVICE";//集群
 
     @Autowired
@@ -79,5 +80,10 @@ public class OrderController {
         return restTemplate.getForObject(PAYMENT_URL + "/payment/zipkin", String.class);
     }
 
+
+    @Test
+    public void test(){
+
+    }
 
 }
