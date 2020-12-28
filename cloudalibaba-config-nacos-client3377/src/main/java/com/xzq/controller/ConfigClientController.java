@@ -1,9 +1,14 @@
 package com.xzq.controller;
 
+import com.xzq.controller.entity.HisConfigInfo;
+import com.xzq.controller.service.HisConfigInfoService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  * @ClassName: ConfigClientController
@@ -14,11 +19,25 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RefreshScope//实现配置自动更新
 public class ConfigClientController {
+
     @Value("${config.info}")
     private String configInfo;
+
+    private final HisConfigInfoService hisConfigInfoService;
+
+    @Autowired
+    public ConfigClientController(HisConfigInfoService hisConfigInfoService) {
+        this.hisConfigInfoService = hisConfigInfoService;
+    }
 
     @GetMapping("/config/info")
     public String getConfigInfo() {
         return configInfo;
     }
+
+    @GetMapping("listInfo")
+    public List<HisConfigInfo> listInfo() {
+        return hisConfigInfoService.listInfo();
+    }
+
 }
