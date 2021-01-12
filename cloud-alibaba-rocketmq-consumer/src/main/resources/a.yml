@@ -1,0 +1,49 @@
+server:
+  port: 28082
+spring:
+  cloud: 
+    stream: 
+      rocketmq: 
+        binder: 
+          name-server: 192.168.137.131:9876
+          input1:
+            destination: test-topic
+            content-type: text/plain
+            group: test-group1
+            consumer:
+              orderly: true
+          input2:
+            destination: test-topic
+            content-type: text/plain
+            group: test-group2
+            consumer:
+              orderly: false
+              tags: tagStr
+              concurrency: 20
+              maxAttempts: 1
+          input3:
+            destination: test-topic
+            content-type: application/json
+            group: test-group3
+            consumer:
+              tags: tagObj
+              concurrency: 20
+          input4:
+            destination: TransactionTopic
+            content-type: text/plain
+            group: transaction-group
+            consumer:
+              concurrency: 5
+          input5:
+            destination: pull-topic
+            content-type: text/plain
+            group: pull-topic-group
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: *
+  endpoint:
+    health:
+      show-details: always
