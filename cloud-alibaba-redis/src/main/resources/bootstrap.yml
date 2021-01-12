@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: nacos-redis-client
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      config:
+        file-extension: properties
+        server-addr: localhost:8848

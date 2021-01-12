@@ -6,8 +6,9 @@ spring:
   cloud:
     nacos:
       config:
-        server-addr: 192.168.137.131:8848 # 配置中心
-        file-extension: yaml # 这里指定的文件格式需要和nacos上新建的配置文件后缀相同，否则读不到
+        server-addr: localhost:8848 # 配置中心
+        file-extension: properties # 这里指定的文件格式需要和nacos上新建的配置文件后缀相同，否则读不到
+#        file-extension: yaml # 这里指定的文件格式需要和nacos上新建的配置文件后缀相同，否则读不到
 #        group: TEST_GROUP
 #        namespace: 4ccc4c4c-51ec-4bd1-8280-9e70942c0d0c
 
