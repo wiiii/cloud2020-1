@@ -1,4 +1,4 @@
-package com.xzq.controller.entity;
+package com.xzq.springcloud.entities;
 
 import java.io.Serializable;
 

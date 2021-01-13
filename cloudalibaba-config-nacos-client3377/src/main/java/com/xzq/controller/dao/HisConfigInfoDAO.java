@@ -1,6 +1,6 @@
 package com.xzq.controller.dao;
 
-import com.xzq.controller.entity.HisConfigInfo;
+import com.xzq.springcloud.entities.HisConfigInfo;
 import org.springframework.stereotype.Repository;
 
 /**

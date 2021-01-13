@@ -1,6 +1,6 @@
 package com.xzq.controller.service;
 
-import com.xzq.controller.entity.HisConfigInfo;
+import com.xzq.springcloud.entities.HisConfigInfo;
 
 import java.util.List;
 

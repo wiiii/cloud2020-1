@@ -1,7 +1,7 @@
 package com.xzq.controller;
 
-import com.xzq.controller.entity.HisConfigInfo;
 import com.xzq.controller.service.HisConfigInfoService;
+import com.xzq.springcloud.entities.HisConfigInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;

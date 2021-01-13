@@ -1,8 +1,8 @@
 package com.xzq.controller.service.impl;
 
 import com.xzq.controller.dao.HisConfigInfoMapper;
-import com.xzq.controller.entity.HisConfigInfo;
 import com.xzq.controller.service.HisConfigInfoService;
+import com.xzq.springcloud.entities.HisConfigInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

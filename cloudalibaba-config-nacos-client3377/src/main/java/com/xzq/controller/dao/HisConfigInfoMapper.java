@@ -1,7 +1,7 @@
 package com.xzq.controller.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.xzq.controller.entity.HisConfigInfo;
+import com.xzq.springcloud.entities.HisConfigInfo;
 import org.springframework.stereotype.Repository;
 
 @Repository

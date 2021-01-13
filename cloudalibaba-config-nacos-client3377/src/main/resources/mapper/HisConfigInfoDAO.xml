@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xzq.controller.dao.HisConfigInfoDAO">
-  <resultMap id="BaseResultMap" type="com.xzq.controller.entity.HisConfigInfo">
+  <resultMap id="BaseResultMap" type="com.xzq.springcloud.entities.HisConfigInfo">
     <id column="nid" jdbcType="BIGINT" property="nid" />
     <result column="id" jdbcType="BIGINT" property="id" />
     <result column="data_id" jdbcType="VARCHAR" property="dataId" />
@@ -14,7 +14,7 @@
     <result column="op_type" jdbcType="CHAR" property="opType" />
     <result column="tenant_id" jdbcType="VARCHAR" property="tenantId" />
   </resultMap>
-  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.xzq.controller.entity.HisConfigInfoWithBLOBs">
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.xzq.springcloud.entities.HisConfigInfoWithBLOBs">
     <result column="content" jdbcType="LONGVARCHAR" property="content" />
     <result column="src_user" jdbcType="LONGVARCHAR" property="srcUser" />
   </resultMap>
@@ -37,7 +37,7 @@
     delete from his_config_info
     where nid = #{nid,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.xzq.controller.entity.HisConfigInfoWithBLOBs">
+  <insert id="insert" parameterType="com.xzq.springcloud.entities.HisConfigInfoWithBLOBs">
     insert into his_config_info (nid, id, data_id, 
       group_id, app_name, md5, 
       gmt_create, gmt_modified, src_ip, 
@@ -49,7 +49,7 @@
       #{opType,jdbcType=CHAR}, #{tenantId,jdbcType=VARCHAR}, #{content,jdbcType=LONGVARCHAR}, 
       #{srcUser,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.xzq.controller.entity.HisConfigInfoWithBLOBs">
+  <insert id="insertSelective" parameterType="com.xzq.springcloud.entities.HisConfigInfoWithBLOBs">
     insert into his_config_info
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="nid != null">
@@ -134,7 +134,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.xzq.controller.entity.HisConfigInfoWithBLOBs">
+  <update id="updateByPrimaryKeySelective" parameterType="com.xzq.springcloud.entities.HisConfigInfoWithBLOBs">
     update his_config_info
     <set>
       <if test="id != null">
@@ -176,7 +176,7 @@
     </set>
     where nid = #{nid,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.xzq.controller.entity.HisConfigInfoWithBLOBs">
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.xzq.springcloud.entities.HisConfigInfoWithBLOBs">
     update his_config_info
     set id = #{id,jdbcType=BIGINT},
       data_id = #{dataId,jdbcType=VARCHAR},
@@ -192,7 +192,7 @@
       src_user = #{srcUser,jdbcType=LONGVARCHAR}
     where nid = #{nid,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.xzq.controller.entity.HisConfigInfo">
+  <update id="updateByPrimaryKey" parameterType="com.xzq.springcloud.entities.HisConfigInfo">
     update his_config_info
     set id = #{id,jdbcType=BIGINT},
       data_id = #{dataId,jdbcType=VARCHAR},
